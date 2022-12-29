@@ -1,0 +1,15 @@
+:root {
+  // dark colors with levels 0, 1, 2, 3, 4, 6, 8, 12, 16 and 24
+  // color is defined by the name with layer and a dark-color mixin with the appropriate overlay
+  // overlay amounts in order (in percentages): 0, 5, 7, 8, 9, 11, 12, 14, 15, 16
+  --dark-0: #{mix(#fff, #121212, 0%)};
+  --dark-1: #{mix(#ffffff, #121212, 5%)};
+  --dark-2: #{mix(#fff, #121212, 7%)};
+  --dark-3: #{mix(#fff, #121212, 8%)};
+  --dark-4: #{mix(#fff, #121212, 9%)};
+  --dark-6: #{mix(#fff, #121212, 11%)};
+  --dark-8: #{mix(#fff, #121212, 12%)};
+  --dark-12: #{mix(#fff, #121212, 14%)};
+  --dark-16: #{mix(#fff, #121212, 15%)};
+  --dark-24: #{mix(#fff, #121212, 16%)};
+}

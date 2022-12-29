@@ -1,0 +1,57 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+$height: 96px;
+
+.dockWrapper {
+  // initial positioning
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto 1rem auto;
+
+  // size
+  width: 60vw;
+  // dock size is 96px + 32px absolute padding for animations
+  height: $height + 32px;
+
+  overflow: hidden;
+}
+
+.dock {
+  // position on lower half of container and give appropriate height
+  height: $height;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  // internal layout
+  display: flex;
+  gap: 0rem;
+  padding: 0 3rem;
+
+  // styling
+  border-radius: 6rem;
+  background: var(--dark-2);
+}
+
+.item {
+  width: $height;
+  height: 100%;
+
+  transition: transform 0.2s ease-in-out;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  $highlight-height: -1.5rem;
+
+  &:hover {
+    transform: translateY($highlight-height);
+    // this is potentially scuffed and a hack but i'll just trust copilot on this one
+    height: calc(100% + #{-$highlight-height});
+  }
+}
