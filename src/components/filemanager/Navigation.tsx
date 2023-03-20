@@ -1,7 +1,7 @@
 import styles from "./Navigation.module.scss";
 
 import { atomWithStorage } from "jotai/utils";
-import { FC, useState } from "react";
+import { FC, Suspense, useState } from "react";
 import * as ScrollArea from "@radix-ui/react-scroll-area";
 import * as Separator from "@radix-ui/react-separator";
 import { useAtom } from "jotai";
@@ -12,7 +12,9 @@ const Navigation: FC = () => {
       <h1 className={styles.title}>Files</h1>
       <Separator.Root className={styles.separator} />
       <ScrollArea.Viewport className={styles.ScrollAreaViewport}>
-        <Tree />
+        <Suspense>
+          <Tree />
+        </Suspense>
       </ScrollArea.Viewport>
       <ScrollArea.Scrollbar
         className={styles.ScrollAreaScrollbar}
